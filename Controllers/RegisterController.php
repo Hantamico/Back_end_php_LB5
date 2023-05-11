@@ -18,7 +18,7 @@ class RegisterController {
         // 2. handle form data
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-            $aConfig = require_once 'config.php';
+            $aConfig = require_once '../config.php';
 
             // 3.raw. Check that user has already existed
             $pdo = new \PDO("mysql:dbname={$aConfig['name']};host={$aConfig['host']};charset={$aConfig['charset']}", $aConfig['user']);
@@ -53,54 +53,54 @@ class RegisterController {
     // TODO 4: RENDER: 1) view (html) 2) data (from php)
     public function renderView($arguments = []) {
         ?>
-            <!DOCTYPE html>
-            <html>
+        <!DOCTYPE html>
+        <html>
 
-            <?php require_once 'ViewSections/sectionHead.php' ?>
+        <?php require_once 'ViewSections/sectionHead.php' ?>
 
-            <body>
+        <body>
 
-            <div class="container">
+        <div class="container">
 
-                <?php require_once 'ViewSections/sectionNavbar.php' ?>
+            <?php require_once 'ViewSections/sectionNavbar.php' ?>
 
-                <br>
+            <br>
 
-                <div class="card card-primary">
-                    <div class="card-header bg-success text-light">
-                        Register form
-                    </div>
-                    <div class="card-body">
-                        <form method="post">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input class="form-control" type="email" name="email"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input class="form-control" type="password" name="password"/>
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" name="formRegister"/>
-                            </div>
-                        </form>
+            <div class="card card-primary">
+                <div class="card-header bg-success text-light">
+                    Register form
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password"/>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="formRegister"/>
+                        </div>
+                    </form>
 
-                        <!-- TODO: render php data   -->
-                        <?php
-                        if ($arguments['infoMessage']) {
-                            echo '<hr/>';
-                            echo "<span style='color:red'>{$arguments['infoMessage']}</span>";
-                        }
-                        ?>
-
-                    </div>
+                    <!-- TODO: render php data   -->
+                    <?php
+                    if ($arguments['infoMessage']) {
+                        echo '<hr/>';
+                        echo "<span style='color:red'>{$arguments['infoMessage']}</span>";
+                    }
+                    ?>
 
                 </div>
-            </div>
 
-            </body>
-            </html>
+            </div>
+        </div>
+
+        </body>
+        </html>
         <?php
     }
 }

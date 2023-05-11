@@ -21,34 +21,34 @@ class AdminController {
     public function renderView($arguments = []) {
         ?>
 
-            <!DOCTYPE html>
-            <html>
+        <!DOCTYPE html>
+        <html>
 
-            <?php require_once 'ViewSections/sectionHead.php' ?>
+        <?php require_once 'ViewSections/sectionHead.php' ?>
 
-            <body>
+        <body>
 
-            <div class="container">
+        <div class="container">
 
-                <!-- navbar menu -->
-                <?php require_once 'ViewSections/sectionNavbar.php' ?>
-                <br>
+            <!-- navbar menu -->
+            <?php require_once 'ViewSections/sectionNavbar.php' ?>
+            <br>
 
-                <!-- guestbook section -->
-                <div class="card card-primary">
-                    <div class="card-header bg-warning text-light">
-                        Admin
-                    </div>
-                    <div class="card-body">
+            <!-- guestbook section -->
+            <div class="card card-primary">
+                <div class="card-header bg-warning text-light">
+                    Admin
+                </div>
+                <div class="card-body">
 
-                        <!-- TODO: render php data   -->
+                    <!-- TODO: render php data   -->
 
-                    </div>
                 </div>
             </div>
+        </div>
 
-            </body>
-            </html>
+        </body>
+        </html>
 
         <?php
     }

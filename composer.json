@@ -1,0 +1,11 @@
+{
+    "name": "galag/back_lb5",
+    "autoload": {
+        "psr-4": {
+            "Galag\\BackLb5\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^6.2"
+    }
+}
